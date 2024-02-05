@@ -6,7 +6,7 @@ import random
 def finding_prime(number):
   # 무차별 대입 -> 2~ num까지의 수를 모두 나누어봄
   num = abs(number)  #abs(num) -> num의 절대 값 반환
-  if num < 4 : return True
+  if num < 4: return True
   for x in range(2, num):
     if num % x == 0:
       return False  # num / 2 까지만 했어도 저장공간 단축 가능 했을 듯,,
@@ -23,6 +23,7 @@ def finding_prime_sqrt(number):
 
 
 def finding_prime_fermat(number):
+# 페르마의 정리를 이용하여 소수 구하
   if number <= 102:
     for a in range(2, number):
       if pow(a, number - 1, number) != 1:
